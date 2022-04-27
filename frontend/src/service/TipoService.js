@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const TIPO_URL = "http://localhost:8080/tipos";
+const TIPO_URL = "https://thabeck-filter.herokuapp.com/tipos";
 
 class TipoService {
     getAllTypes() {

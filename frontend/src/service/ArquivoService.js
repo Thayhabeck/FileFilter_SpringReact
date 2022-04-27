@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ARQUIVO_URL = "http://localhost:8080/arquivos";
+const ARQUIVO_URL = "https://thabeck-filter.herokuapp.com/arquivos";
 
 class ArquivoService {
     getAllFiles() {
@@ -8,15 +8,15 @@ class ArquivoService {
     }
 
     getByName(nome) {
-        return axios.get(ARQUIVO_URL + "/listarNome?nome=" + nome);
+        return axios.get(ARQUIVO_URL + "/listarNome?Nome=" + nome);
     }
 
     getAllByType(tipo) {
-        return axios.get(ARQUIVO_URL + "/listarTipo?tipo=" + tipo);
+        return axios.get(ARQUIVO_URL + "/listarTipo?Tipo=" + tipo);
     }
 
     getAllByDate(dtInicial, dtFinal) {
-        return axios.get(ARQUIVO_URL + "/listarData?dataFinal=" + dtFinal + "&dataInicial=" + dtInicial);
+        return axios.get(ARQUIVO_URL + "/listarData?DataFinal(dd/mm/aaaa)=" + dtFinal + "&DataInicial(dd/mm/aaaa)=" + dtInicial);
     }
 }
 

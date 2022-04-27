@@ -37,7 +37,7 @@ public class arquivoController {
 	}
 	
 	@GetMapping(value = "/listarData")
-	public ResponseEntity<List<Arquivo>> findDateBetween(@RequestParam(name = "Data Inicial (dd/mm/aaaa)") String dataInicial, @RequestParam(name = "Data Final (dd/mm/aaaa)") String dataFinal) throws ParseException{
+	public ResponseEntity<List<Arquivo>> findDateBetween(@RequestParam(name = "DataInicial(dd/mm/aaaa)") String dataInicial, @RequestParam(name = "DataFinal(dd/mm/aaaa)") String dataFinal) throws ParseException{
 		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 		List<Arquivo> arquivos = arquivoRepository.findAllDate(new Date(fmt.parse(dataInicial).getTime()), new Date(fmt.parse(dataFinal).getTime()));
 		return ResponseEntity.ok().body(arquivos);
